@@ -130,6 +130,8 @@ button | De unieke naam van de Button | `string`
 ```python
 if buttonPress('test'):
     setScreen('screen2')
+    Buttons['test'].enabled = False
+    Buttons['test'].t = "Clicked!"
 ```
 
 ### squareButtonPress(*`button`*)
