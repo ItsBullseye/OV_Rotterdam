@@ -1,23 +1,22 @@
 # OV_Rotterdam
 
-## drawui.py
+* [User Interface Classes](#user-interface-classes)
+    * [Button](#button)
+    * [SquareButton](#squarebutton)
+    * [Label](#label)
+    * [Panel](#panel)
+    * [InputField](#inputfield)
+    * [ListBox](#listbox)
+* [User Interface Functies](#user-interface-functies)
+    * [setScreen()](#setscreen)
+    * [buttonPress()](#buttonpress)
+    * [squareButtonPress()](#squarebuttonpress)
+    * [overButton()](#overbutton)
+    * [overSquareButton()](#oversquarebutton)
 
-Het `drawui.py` bestand bestaat uit lege dictionaries voor user interface objecten:
-```python
-Buttons = {}
-SquareButtons = {}
-Labels = {}
-ListBoxes = {}
-InputFields = {}
-Panels = {}
-```
-Deze dictionaries moeten aangevuld worden in de `setup()` functie die eenmalig wordt uitgevoerd wanneer het programma start.
+## <a id='user-interface-classes'>User Interface Classes</a>
 
-Bij elke `draw()` iteratie wordt er gelooped door alle dictionaries, en zo de objecten in beeld gebracht.
-
-## User Interface Classes
-
-### Button
+ ### <a id='button'>Button<a/>
 Een Button object is een knop waar je met je muis op kunt klikken, alle knoppen hebben een hoogte van 50 pixels.
 
 Eigenschap | Beschrijving | Type | Standaard
@@ -38,7 +37,9 @@ alignment | De tekstpositie: `LEFT`, `CENTER` of `RIGHT` | | `CENTER`
 Deze code voegt een nieuwe regel toe aan de dictionary, met als key de string `'hello'` en value een Button class object.  
 Het is de bedoeling dat je deze code in je `setup()` functie zet, zodat deze code alleen eenmalig wordt uitgevoerd bij het opstarten van je programma.
 
-### SquareButton
+
+
+### <a id='squarebutton'>SquareButton</a>
 Een SquareButton is een knop waar je met je muis op kunt klikken, een squarebutton heeft altijd een vierkante vorm.
 
 Eigenschap | Beschrijving | Type | Standaard
@@ -57,7 +58,9 @@ alignment | De tekstpositie: `LEFT`, `CENTER` of `RIGHT` | | `CENTER`
 
 **Voorbeeld**: `SquareButtons['hello'] = SquareButton('hello', 'Hello world!', 20, 60, 250, True, True, '')`
 
-### Label
+
+
+###  <a id='label'>Label</a>
 Een Label is een stuk tekst.
 
 Eigenschap | Beschrijving | Type | Standaard
@@ -73,7 +76,9 @@ screen | Op welke scherm(en) de label staat | `string` of `list (string)` | `''`
 
 **Voorbeeld**: `Labels['hello'] = Label('hello', 'Hello world!', 5, 320, False, LEFT, True)`
 
-### Panel
+
+
+###  <a id='panel'>Panel</a>
 Een panel is een rechthoekig vak.
 
 Eigenschap | Beschrijving | Type | Standaard
@@ -99,15 +104,23 @@ Mode | Beschrijving
 
 **Voorbeeld:** `Panels['hello'] = Panel('hello', 20, 350, 100, 50, '', True)`
 
-### InputField
+
+
+### <a id='inputfield'>InputField</a>
 Een InputField is een veld waarin getypt kan worden door de gebruiker.
 
-### ListBox
+
+
+### <a id='listbox'>ListBox</a>
 Een ListBox is een lijst waar items toegevoegd en verwijderd kunnen worden.
 
-## User Interface Functies
 
-### setScreen(*`screen`*)
+
+## <a id='user-interface-functies'>User Interface Functies</a>
+
+
+
+### <a id='setscreen'>setScreen(*`screen`*)</a>
 
 Verandert het scherm waar de gebruiker op staat
 
@@ -117,7 +130,9 @@ screen | De naam van het scherm | `string`
 
 **Voorbeeld:** `setScreen('hello')`
 
-### buttonPress(*`button`*)
+
+
+### <a id='buttonpress'>buttonPress(*`button`*)</a>
 
 Controleert of er op een Button is geklikt, zo ja return `True`, anders `False`
 
@@ -133,7 +148,9 @@ if buttonPress('test'):
     Buttons['test'].t = "Clicked!"
 ```
 
-### squareButtonPress(*`button`*)
+
+
+### <a id='squarebuttonpress'>squareButtonPress(*`button`*)</a>
 
 Controleert of er op een SquareButton is geklikt, zo ja return `True`, anders `False`
 
@@ -141,7 +158,9 @@ Argument | Beschrijving | Type
 --- | --- | ---
 button | De unieke naam van de SquareButton | `string`
 
-### overButton(*`button`*)
+
+
+### <a id='overbutton'>overButton(*`button`*)</a>
 
 Controleert of de muis boven een Button staat, zo ja return `True`, anders `False`
 
@@ -149,7 +168,9 @@ Argument | Beschrijving | Type
 --- | --- | ---
 button | De unieke naam van de Button | `string`
 
-### overSquareButton(*`button`*)
+
+
+### <a id='oversquarebutton'>overSquareButton(*`button`*)</a>
 
 Controleert of de muis boven een SquareButton staat, zo ja return `True`, anders `False`
 
