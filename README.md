@@ -149,21 +149,22 @@ screen | Op welke scherm(en) de ListBox staat | `string` of `list (string)` | `'
 
 ### <a id='image'>Image</a>
 Een Image is een afbeelding. Het kan eventueel als een Button gebruikt kan worden
-def __init__(self, name, x, y, w, h, img, imgMode, scaling = 1, a = 1, visible = True, screen=""):
 
 Eigenschap | Beschrijving | Type | Standaard
 --- | --- | --- | ---
 name | De unieke naam voor de ListBox | `string`
 x | De x-positie | `int`
 y | De y-positie | `int`
-w | De breedte | `int`
-h | De hoogte | `int`
+w | De breedte (zet op `0` voor standaard) | `int`
+h | De hoogte  | `int`
 img | De bestandsnaam van de afbeelding | `string`
 imgMode | De imageMode (`CORNER`, `CORNERS` of `CENTER`)
 scaling | Schaling van de afbeelding (`1.0` staat voor 100%, `0.5` voor 50%, `2.0` voor 200% etc.) | `float` | `1`
 a | Alpha: De zichtbaarheid van de afbeelding (`1.0` staat voor 100%) | `float` | `1`
 visible | Of de ListBox zichtbaar is | `boolean` | `True`
 screen | Op welke scherm(en) de ListBox staat | `string` of `list (string)` | `''`
+
+**Voorbeeld:** `Images['hello'] = Image('hello', 10, 10, -1, -1, 'hello.png', CORNER)
 
 
 
