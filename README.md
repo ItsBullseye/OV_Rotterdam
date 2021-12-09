@@ -160,7 +160,8 @@ h | De hoogte  | `int`
 img | De bestandsnaam van de afbeelding | `string`
 imgMode | De imageMode (`CORNER`, `CORNERS` of `CENTER`)
 scaling | Schaling van de afbeelding (`1.0` staat voor 100%, `0.5` voor 50%, `2.0` voor 200% etc.) | `float` | `1`
-a | Alpha: De zichtbaarheid van de afbeelding (`1.0` staat voor 100%) | `float` | `1`
+a | Alpha: De zichtbaarheid van de afbeelding (`255` staat voor 100%) | `float` | `255`
+isButton | Of de Image een Button is | `boolean` | `False`
 visible | Of de ListBox zichtbaar is | `boolean` | `True`
 screen | Op welke scherm(en) de ListBox staat | `string` of `list (string)` | `''`
 
