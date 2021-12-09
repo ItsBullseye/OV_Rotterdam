@@ -165,7 +165,7 @@ isButton | Of de Image een Button is | `boolean` | `False`
 visible | Of de ListBox zichtbaar is | `boolean` | `True`
 screen | Op welke scherm(en) de ListBox staat | `string` of `list (string)` | `''`
 
-**Voorbeeld:** `Images['hello'] = Image('hello', 10, 10, -1, -1, 'hello.png', CORNER)
+**Voorbeeld:** `Images['hello'] = Image('hello', 10, 10, -1, -1, 'hello.png', CORNER)`
 
 
 
