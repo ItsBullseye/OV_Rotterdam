@@ -1,3 +1,4 @@
+
 # OV_Rotterdam
 
 * [User Interface Classes](#user-interface-classes)
@@ -7,12 +8,15 @@
     * [Panel](#panel)
     * [InputField](#inputfield)
     * [ListBox](#listbox)
+    * [Image](#image)
 * [User Interface Functies](#user-interface-functies)
     * [setScreen()](#setscreen)
     * [buttonPress()](#buttonpress)
     * [squareButtonPress()](#squarebuttonpress)
+    * [pressedImage()](#pressedimage)
     * [overButton()](#overbutton)
     * [overSquareButton()](#oversquarebutton)
+    * [overImage()](#overImage)
 
 ## <a id='user-interface-classes'>User Interface Classes</a>
 
@@ -49,7 +53,7 @@ t | De tekst dat op de button komt de staan| `string`
 x | De x-positie | `int`
 y | De y-positie | `int`
 s | De lengte en breedte van de button | `int`
-visible | Of de button zichtbaar is | `boolean`
+visible | Of de button zichtbaar is | `boolean` | `True`
 enabled | Of er op de button geklikt kan worden | `boolean` | `True`
 bgcolor | `''` voor grijs, `'red'` voor rood en `'green'` voor groen | `string` | `''`
 screen | Op welke scherm(en) de button staat | `string` of `list (string)` | `''`
@@ -71,7 +75,7 @@ x | De x-positie | `int`
 y | De y-positie | `int`
 bold | Of de tekst groot en dikgedrukt is | `boolean`
 alignment | De uitlijning: `LEFT`, `CENTER` of `RIGHT` |
-visible | Of de label zichtbaar is | `boolean`
+visible | Of de label zichtbaar is | `boolean` | `True`
 screen | Op welke scherm(en) de label staat | `string` of `list (string)` | `''`
 
 **Voorbeeld**: `Labels['hello'] = Label('hello', 'Hello world!', 5, 320, False, LEFT, True)`
@@ -89,7 +93,7 @@ y | De y-positie | `int`
 w | De breedte | `int`
 h | De hoogte | `int`
 mode | Hoe de panel eruit ziet (zie tabel hieronder) | `string`
-visible | Of de panel zichtbaar is | `boolean`
+visible | Of de panel zichtbaar is | `boolean` | `True`
 screen | Op welke scherm(en) de panel staat | `string` of `list (string)` | `''`
 
 Mode | Beschrijving
@@ -109,10 +113,57 @@ Mode | Beschrijving
 ### <a id='inputfield'>InputField</a>
 Een InputField is een veld waarin getypt kan worden door de gebruiker.
 
+Eigenschap | Beschrijving | Type | Standaard
+--- | --- | --- | ---
+name | De unieke naam voor de input field| `string`
+placeholder | De placeholder tekst dat binnen de input field komt te staan als het leeg is| `string`
+x | De x-positie | `int`
+y | De y-positie | `int`
+w | De breedte | `int`
+visible | Of de input field zichtbaar is | `boolean` | `True`
+enabled | Of de input field ingeschakeld is | `boolean` | `True`
+startWithCapitalLetter | Of de input field altijd met een hoofdletter moet beginnen | `boolean` | `False`
+screen | Op welke scherm(en) de input field staat | `string` of `list (string)` | `''`
+
+**Voorbeeld:** `InputFields['hello'] = InputField('hello', 'voer tekst in', 10, 10, 300)`
+
 
 
 ### <a id='listbox'>ListBox</a>
 Een ListBox is een lijst waar items toegevoegd en verwijderd kunnen worden.
+
+Eigenschap | Beschrijving | Type | Standaard
+--- | --- | --- | ---
+name | De unieke naam voor de ListBox | `string`
+listItems | Een lijst van de items die in de ListBox staan | `list`
+x | De x-positie | `int`
+y | De y-positie | `int`
+w | De breedte | `int`
+h | De hoogte | `int`
+visible | Of de ListBox zichtbaar is | `boolean` | `True`
+screen | Op welke scherm(en) de ListBox staat | `string` of `list (string)` | `''`
+
+**Voorbeeld:** `ListBoxes['hello'] = ListBox('hello', ['a', 'b', 'c'], 10, 10, 300, 200)`
+
+
+
+### <a id='image'>Image</a>
+Een Image is een afbeelding. Het kan eventueel als een Button gebruikt kan worden
+def __init__(self, name, x, y, w, h, img, imgMode, scaling = 1, a = 1, visible = True, screen=""):
+
+Eigenschap | Beschrijving | Type | Standaard
+--- | --- | --- | ---
+name | De unieke naam voor de ListBox | `string`
+x | De x-positie | `int`
+y | De y-positie | `int`
+w | De breedte | `int`
+h | De hoogte | `int`
+img | De bestandsnaam van de afbeelding | `string`
+imgMode | De imageMode (`CORNER`, `CORNERS` of `CENTER`)
+scaling | Schaling van de afbeelding (`1.0` staat voor 100%, `0.5` voor 50%, `2.0` voor 200% etc.) | `float` | `1`
+a | Alpha: De zichtbaarheid van de afbeelding (`1.0` staat voor 100%) | `float` | `1`
+visible | Of de ListBox zichtbaar is | `boolean` | `True`
+screen | Op welke scherm(en) de ListBox staat | `string` of `list (string)` | `''`
 
 
 
@@ -159,6 +210,15 @@ Argument | Beschrijving | Type
 button | De unieke naam van de SquareButton | `string`
 
 
+### <a id='imagePress'>imagePress(*`image`*)</a>
+
+Controleert of er op een Image is geklikt, zo ja return `True`, anders `False`
+
+Argument | Beschrijving | Type
+--- | --- | ---
+image | De unieke naam van de Image | `string`
+
+
 
 ### <a id='overbutton'>overButton(*`button`*)</a>
 
@@ -177,3 +237,12 @@ Controleert of de muis boven een SquareButton staat, zo ja return `True`, anders
 Argument | Beschrijving | Type
 --- | --- | ---
 button | De unieke naam van de SquareButton | `string`
+
+
+### <a id='overimage'>overImage(*`image`*)</a>
+
+Controleert of de muis boven een Image staat, zo ja return `True`, anders `False`
+
+Argument | Beschrijving | Type
+--- | --- | ---
+image | De unieke naam van de Image | `string`
