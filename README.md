@@ -29,7 +29,7 @@
 Een PlayerModel is een object waar speler gegevens in opgeslagen kunnen worden
 
 Eigenschap | Beschrijving | Type
---- | --- | --- | ---
+--- | --- | ---
 name | De naam van de speler | `string`
 points | Aantal punten | `int`
 buses | Aantal aangelegde buspionnen (max. 20) | `int`
@@ -45,7 +45,7 @@ wildcards | Aantal Wildcards | `int`
 Een PlayerModel is een object waar meerdere spelers in opgeslagen kan worden
 
 Eigenschap | Beschrijving | Type
---- | --- | --- | ---
+--- | --- | ---
 names | Een dictionary van alle spelers, met de naam als string als index en de PlayerModel object als value | `dict<string, PlayerModel>`
 turn | De speler die momenteel aan de beurt is | `string`
 
