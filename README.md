@@ -1,6 +1,10 @@
 
+
 # OV_Rotterdam
 
+* [Classes](#classes)
+	* [PlayerModel](#playermodel)
+	* [PlayersModel](#playersmodel)
 * [User Interface Classes](#user-interface-classes)
     * [Button](#button)
     * [SquareButton](#squarebutton)
@@ -18,9 +22,39 @@
     * [overSquareButton()](#oversquarebutton)
     * [overImage()](#overImage)
 
+## <a id='classes'>Classes</a>
+
+### <a id='playermodel'>PlayerModel</a>
+
+Een PlayerModel is een object waar speler gegevens in opgeslagen kunnen worden
+
+Eigenschap | Beschrijving | Type
+--- | --- | --- | ---
+name | De naam van de speler | `string`
+points | Aantal punten | `int`
+buses | Aantal aangelegde buspionnen (max. 20) | `int`
+metros | Aantal aangelegde metropionnen (max. 20) | `int`
+red | Aantal rode kaarten | `int`
+green | Aantal groene kaarten | `int`
+blue | Aantal blauwe kaarten | `int`
+yellow | Aantal gele kaarten | `int`
+wildcards | Aantal Wildcards | `int`
+
+### <a id='playersmodel'>PlayersModel</a>
+
+Een PlayerModel is een object waar meerdere spelers in opgeslagen kan worden
+
+Eigenschap | Beschrijving | Type
+--- | --- | --- | ---
+names | Een dictionary van alle spelers, met de naam als string als index en de PlayerModel object als value | `dict<string, PlayerModel>`
+turn | De speler die momenteel aan de beurt is | `string`
+
+
+
+
 ## <a id='user-interface-classes'>User Interface Classes</a>
 
- ### <a id='button'>Button<a/>
+### <a id='button'>Button<a/>
 Een Button object is een knop waar je met je muis op kunt klikken, alle knoppen hebben een hoogte van 50 pixels.
 
 Eigenschap | Beschrijving | Type | Standaard
@@ -33,7 +67,7 @@ w | De breedte van de button | `int`
 visible | Of de button zichtbaar is | `boolean`
 enabled | Of er op de button geklikt kan worden | `boolean` | `True`
 bgcolor | `''` voor grijs, `'red'` voor rood en `'green'` voor groen | `string` | `''`
-screen | Op welke scherm(en) de button staat | `string` of `list (string)` | `''`
+screen | Op welke scherm(en) de button staat | `string` of `list<string>` | `''`
 img | De bestandsnaam voor een plaatje | `string` | `''`
 alignment | De tekstpositie: `LEFT`, `CENTER` of `RIGHT` | | `CENTER`
 
@@ -56,7 +90,7 @@ s | De lengte en breedte van de button | `int`
 visible | Of de button zichtbaar is | `boolean` | `True`
 enabled | Of er op de button geklikt kan worden | `boolean` | `True`
 bgcolor | `''` voor grijs, `'red'` voor rood en `'green'` voor groen | `string` | `''`
-screen | Op welke scherm(en) de button staat | `string` of `list (string)` | `''`
+screen | Op welke scherm(en) de button staat | `string` of `list<string>` | `''`
 img | De bestandsnaam voor een plaatje | `string` | `''`
 alignment | De tekstpositie: `LEFT`, `CENTER` of `RIGHT` | | `CENTER`
 
@@ -76,7 +110,7 @@ y | De y-positie | `int`
 bold | Of de tekst groot en dikgedrukt is | `boolean`
 alignment | De uitlijning: `LEFT`, `CENTER` of `RIGHT` |
 visible | Of de label zichtbaar is | `boolean` | `True`
-screen | Op welke scherm(en) de label staat | `string` of `list (string)` | `''`
+screen | Op welke scherm(en) de label staat | `string` of `list<string>` | `''`
 
 **Voorbeeld**: `Labels['hello'] = Label('hello', 'Hello world!', 5, 320, False, LEFT, True)`
 
@@ -94,7 +128,7 @@ w | De breedte | `int`
 h | De hoogte | `int`
 mode | Hoe de panel eruit ziet (zie tabel hieronder) | `string`
 visible | Of de panel zichtbaar is | `boolean` | `True`
-screen | Op welke scherm(en) de panel staat | `string` of `list (string)` | `''`
+screen | Op welke scherm(en) de panel staat | `string` of `list<string>` | `''`
 
 Mode | Beschrijving
 --- | ---
@@ -123,7 +157,7 @@ w | De breedte | `int`
 visible | Of de input field zichtbaar is | `boolean` | `True`
 enabled | Of de input field ingeschakeld is | `boolean` | `True`
 startWithCapitalLetter | Of de input field altijd met een hoofdletter moet beginnen | `boolean` | `False`
-screen | Op welke scherm(en) de input field staat | `string` of `list (string)` | `''`
+screen | Op welke scherm(en) de input field staat | `string` of `list<string>` | `''`
 
 **Voorbeeld:** `InputFields['hello'] = InputField('hello', 'voer tekst in', 10, 10, 300)`
 
@@ -141,7 +175,7 @@ y | De y-positie | `int`
 w | De breedte | `int`
 h | De hoogte | `int`
 visible | Of de ListBox zichtbaar is | `boolean` | `True`
-screen | Op welke scherm(en) de ListBox staat | `string` of `list (string)` | `''`
+screen | Op welke scherm(en) de ListBox staat | `string` of `list<string>` | `''`
 
 **Voorbeeld:** `ListBoxes['hello'] = ListBox('hello', ['a', 'b', 'c'], 10, 10, 300, 200)`
 
@@ -163,7 +197,7 @@ scaling | Schaling van de afbeelding (`1.0` staat voor 100%, `0.5` voor 50%, `2.
 a | Alpha: De zichtbaarheid van de afbeelding (`255` staat voor 100%) | `float` | `255`
 isButton | Of de Image een Button is | `boolean` | `False`
 visible | Of de ListBox zichtbaar is | `boolean` | `True`
-screen | Op welke scherm(en) de ListBox staat | `string` of `list (string)` | `''`
+screen | Op welke scherm(en) de ListBox staat | `string` of `list<string>` | `''`
 
 **Voorbeeld:** `Images['hello'] = Image('hello', 10, 10, -1, -1, 'hello.png', CORNER)`
 
