@@ -34,10 +34,10 @@ name | De naam van de speler | `string`
 points | Aantal punten | `int`
 buses | Aantal aangelegde buspionnen (max. 20) | `int`
 metros | Aantal aangelegde metropionnen (max. 20) | `int`
-red | Aantal rode kaarten | `int`
-green | Aantal groene kaarten | `int`
-blue | Aantal blauwe kaarten | `int`
-yellow | Aantal gele kaarten | `int`
+redcards | Aantal rode kaarten | `int`
+greencards | Aantal groene kaarten | `int`
+bluecards | Aantal blauwe kaarten | `int`
+yellowcards | Aantal gele kaarten | `int`
 wildcards | Aantal Wildcards | `int`
 
 ### <a id='playersmodel'>PlayersModel</a>
