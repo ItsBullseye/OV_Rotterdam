@@ -32,8 +32,11 @@ Eigenschap | Beschrijving | Type
 --- | --- | ---
 name | De naam van de speler | `string`
 points | Aantal punten | `int`
-buses | Aantal aangelegde buspionnen (max. 20) | `int`
-metros | Aantal aangelegde metropionnen (max. 20) | `int`
+lostpoints | Het aantal punten dat je hebt verloren sinds je laatste beurt | `int`
+lostroutes | Het aantal routes dat je hebt verloren sinds je laatste beurt | `int` 
+turns | Het aantal beurten dat je hebt gehad, dit is 0 als een speler nog nooit aan de beurt is geweest | `int`
+buses | Aantal aangelegde buspionnen | `int`
+metros | Aantal aangelegde metropionnen | `int`
 redcards | Aantal rode kaarten | `int`
 greencards | Aantal groene kaarten | `int`
 bluecards | Aantal blauwe kaarten | `int`
@@ -48,7 +51,8 @@ Eigenschap | Beschrijving | Type
 --- | --- | ---
 names | Een dictionary van alle spelers, met de naam als string als index en de PlayerModel object als value | `dict<string, PlayerModel>`
 turn | De speler die momenteel aan de beurt is | `string`
-
+lastTurn | De speler die 20 of meer vervoerspionnen heeft gehaald en dus de laatste beurt zal krijgen | `string`
+veryLastTurn | Of de huidige beurt de allerlaatste beurt is van het spel | `boolean`
 
 
 
@@ -70,6 +74,8 @@ bgcolor | `''` voor grijs, `'red'` voor rood en `'green'` voor groen | `string` 
 screen | Op welke scherm(en) de button staat | `string` of `list<string>` | `''`
 img | De bestandsnaam voor een plaatje | `string` | `''`
 alignment | De tekstpositie: `LEFT`, `CENTER` of `RIGHT` | | `CENTER`
+isCheckbox | Of de button aangevinkt kan worden | `boolean` | `False`
+small | Of de button een kleine button is (een kleine button heeft kleinere tekst en is 40 pixels hoog) | `boolean` | `False`
 
 **Voorbeeld**: `Buttons['hello'] = Button('hello', 'Hello world!', 10, 10, 300, True, True, '')`  
 Deze code voegt een nieuwe regel toe aan de dictionary, met als key de string `'hello'` en value een Button class object.  
@@ -93,6 +99,7 @@ bgcolor | `''` voor grijs, `'red'` voor rood en `'green'` voor groen | `string` 
 screen | Op welke scherm(en) de button staat | `string` of `list<string>` | `''`
 img | De bestandsnaam voor een plaatje | `string` | `''`
 alignment | De tekstpositie: `LEFT`, `CENTER` of `RIGHT` | | `CENTER`
+verticalAlignment | De verticale tekstpositie: `LEFT`, `CENTER` of `RIGHT` | | `CENTER`
 
 **Voorbeeld**: `SquareButtons['hello'] = SquareButton('hello', 'Hello world!', 20, 60, 250, True, True, '')`
 
@@ -111,6 +118,7 @@ bold | Of de tekst groot en dikgedrukt is | `boolean`
 alignment | De uitlijning: `LEFT`, `CENTER` of `RIGHT` |
 visible | Of de label zichtbaar is | `boolean` | `True`
 screen | Op welke scherm(en) de label staat | `string` of `list<string>` | `''`
+rgba | Red, Green, Blue, Alpha values als een tuple | `tuple<int, int, int, int>` | `(0, 0, 0, 255)`
 
 **Voorbeeld**: `Labels['hello'] = Label('hello', 'Hello world!', 5, 320, False, LEFT, True)`
 
@@ -197,6 +205,7 @@ a | Alpha: De zichtbaarheid van de afbeelding (`255` staat voor 100%) | `float` 
 isButton | Of de Image een Button is | `boolean` | `False`
 visible | Of de ListBox zichtbaar is | `boolean` | `True`
 screen | Op welke scherm(en) de ListBox staat | `string` of `list<string>` | `''`
+animate | Als de image een button is, of de image een animatie heeft als je erop klikt | ``
 
 **Voorbeeld:** `Images['hello'] = Image('hello', 10, 10, -1, -1, 'hello.png', CORNER)`
 
